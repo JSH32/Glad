@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(glad)
 
-add_library(glad include/glad/glad.h src/glad.c)
+file(GLOB_RECURSE SRC ${CMAKE_CURRENT_LIST_DIR}/*.c ${CMAKE_CURRENT_LIST_DIR}/*.h)
+add_library(glad ${SRC})
 target_include_directories(glad PUBLIC include/)
